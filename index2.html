@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="theme3.css" type="text/css" />
+    <script type="text/javascript" src="/src/services/config.js"></script>
+    <script type="text/javascript" src="/src/helpers/findMatchingResults.js"></script>
+    <script type="text/javascript" src="/src/helpers/fetchData.js"></script>
+    <script type="text/javascript" src="/src/helpers/handleFetchedData.js"></script>
+    <script type="text/javascript" src="/src/events/handleOnSelect.js"></script>
+    <script type="text/javascript" src="/src/events/handleOnClickField.js"></script>
+    <script type="text/javascript" src="/src/events/handleKeyPress.js"></script>
+    <script type="text/javascript" src="/src/events/handleOnHover.js"></script>
+  </head>
+
+  <body>
+    <div id="root">
+          <div id="autocomplete_wrapper">
+          <input type="search" id="autocomplete" name="autocomplete" autocomplete="off" placeholder="Search..."></input>
+          <div id="result">
+            
+     </div>
+    </div>
+</div>
+
+    <script type="text/javascript" src="/src/events/handleOnInput.js"></script>
+    <script type="text/javascript" src="/src/helpers/debouncer.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>
