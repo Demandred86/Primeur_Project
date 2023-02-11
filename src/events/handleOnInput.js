@@ -1,23 +1,20 @@
-const handleOnInput = function () {
-  // event
-  let input = this.value; // const
+/** Listens for a change in the input and calls the functions to update the matches and results
+ * @param {event} e
+ */
+
+const handleOnInput = function (e) {
+  if (!areFetched) return;
+
+  //Each time the input changes => update the input value and reset the results div to empty.
+  const inputFieldValue = e.target.value;
   resultsHTML.innerHTML = '';
+  console.log(results);
 
-  if (input.length >= MIN_NUM_OF_CHAR_BEFORE_RESULT) {
-    let results = findMatchingResults(input, dictionaryArray); //const
-    let numberOfResults = results.length; //const
-    autocomplete.addEventListener('keydown', (e) => handleKeyPress(numberOfResults, e));
+  if (inputFieldValue.length < MIN_NUM_OF_CHAR_BEFORE_RESULT) return;
+  results = findMatchingResults(inputFieldValue, fetchedDataArray);
 
-    /* results.forEach((result, i) => { */
-    for (const result of results) {
-      //use id value of the object as id
-      resultsHTML.innerHTML += `<li class="result-element" id=${result[0]}>${result[1]}</li>`;
-      document
-        .getElementById(result[0])
-        .addEventListener('onmouseover', (event) => console.log('on Mouse over event', event));
-    }
-    wrapper.classList.add('active');
-  }
+  //Render results and return array with the ids of the results objects
+  index = -1;
+  ids = renderResults(results);
+  0;
 };
-
-// immutable JS

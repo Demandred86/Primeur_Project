@@ -1,4 +1,8 @@
-function fetchData() {
+/** Handles the request to the server
+ *
+ * @returns an object containing an array of objects
+ */
+function fetchData(serverURL) {
   return new Promise((resolve, reject) => {
     let newXHR = new XMLHttpRequest();
     newXHR.open('GET', serverURL);
