@@ -18,6 +18,7 @@ function removeAll(idsArray) {
  */
 const addActive = (id) => {
   document.getElementById(id).classList.add('active');
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'end' });
   return document.getElementById(id);
 };
 
