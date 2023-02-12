@@ -25,7 +25,7 @@ const handleOnSelect = function (e) {
   }
   // Removes all the extra markup
   removeAll(idsArray);
-  addActive(selectedCard.id);
+  addActive(selectedCard.card.id);
 
   // And hides the results
   hideResults();

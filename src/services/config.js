@@ -10,22 +10,19 @@ const TIMEOUT = 1000;
 /**
  * Contains the results of transformation of server response from Object to Array
  */
-let results;
-
-let ids;
-let result;
-let partialResults = [];
 
 const selectedCard = {
-  id: '',
-  name: '',
-  email: '',
-  phone: '',
+  card: {
+    id: '',
+    name: '',
+    email: '',
+    phone: '',
+  },
   setSelectedCard(obj) {
-    this.id = obj.id;
-    this.name = obj.name;
-    this.email = obj.email;
-    this.phone = obj.phone;
+    this.card.id = obj.id;
+    this.card.name = obj.name;
+    this.card.email = obj.email;
+    this.card.phone = obj.phone;
   },
   getSelectedCard() {
     return { id: this.id, name: this.name, email: this.email, phone: this.phone };

@@ -5,7 +5,6 @@ import {
   removeAll,
   removeHiddenFromResultsDiv,
 } from '../helpers/removeAddMarkup.js';
-import { resultsHTML, wrapper } from '../services/selectors.js';
 import { idsArray } from './handleOnInput.js';
 import { selectedCard } from '../services/config.js';
 import { partialResults } from '../helpers/showMarkup.js';
@@ -36,7 +35,7 @@ function handleKeyPress(e) {
     hideResults();
   }
 
-  if (e.key === 'Enter' && selectedCard.id !== '') {
+  if (e.key === 'Enter' && selectedCard.card.id !== '') {
     updateInputField();
     selectedCard.setSelectedCard(partialResults[index]);
     return;

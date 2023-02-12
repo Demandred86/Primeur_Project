@@ -1,4 +1,5 @@
 import {
+  addActiveFromWrapper,
   addHiddenToResultsDiv,
   removeActiveFromWrapper,
   removeHiddenFromResultsDiv,
