@@ -1,30 +1,36 @@
+import { addActive, hideResults, removeAll } from '../helpers/removeAddMarkup.js';
+import { partialResults } from '../helpers/showMarkup.js';
+import { idsArray } from './handleOnInput.js';
+import { selectedCard } from '../services/config.js';
+import updateInputField from '../helpers/updateInputField.js';
 /** Handles Click on card, selecting it and showing the value in the input field
  * @param {*} e
  */
 
 const handleOnSelect = function (e) {
-  let selectedCard;
-
   // Retrive the parent of the clicked element and exits if it's not the card container
-  const clickedElement = e.target.parentElement;
-  if (!clickedElement.classList.contains('box')) return;
+  let clickedElement;
+  const parentElement = e.target.parentElement?.classList.contains('box');
+  const boxElement = e.target.classList.contains('box');
+  if (!parentElement && !boxElement) return;
 
+  parentElement ? (clickedElement = e.target.parentElement) : (clickedElement = e.target);
   // compare all the card ids with the clicked element id to find the match
-  for (const el of results) {
+  for (const el of partialResults) {
     if (el.id === +clickedElement.getAttribute('id')) {
-      selectedCard = el;
+      selectedCard.setSelectedCard(el);
       //updates the content of the input element
-      autocomplete.value = `${el.name} | ${el.email} | ${el.phone} `;
+      updateInputField();
     }
   }
   // Removes all the extra markup
-  removeAll(ids);
+  removeAll(idsArray);
   addActive(selectedCard.id);
 
   // And hides the results
-  resultsHTML.classList.add('hidden');
-  wrapper.classList.remove('active');
-  autocomplete.focus();
+  hideResults();
 
-  return selectedCard;
+  return;
 };
+
+export default handleOnSelect;

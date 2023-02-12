@@ -5,7 +5,7 @@
  * @param {boolean} immediate if TRUE, immediately fires the function
  * @returns
  */
-function debounce(func, wait = 300, immediate = false) {
+function debounce(func, wait = 1000, immediate = false) {
   let timeout;
 
   return function executedFunction() {
@@ -25,3 +25,5 @@ function debounce(func, wait = 300, immediate = false) {
     if (callNow) func.apply(context, args);
   };
 }
+
+export default debounce;

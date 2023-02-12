@@ -1,3 +1,16 @@
+import {
+  addActive,
+  addActiveFromWrapper,
+  hideResults,
+  removeAll,
+  removeHiddenFromResultsDiv,
+} from '../helpers/removeAddMarkup.js';
+import { resultsHTML, wrapper } from '../services/selectors.js';
+import { idsArray } from './handleOnInput.js';
+import { selectedCard } from '../services/config.js';
+import { partialResults } from '../helpers/showMarkup.js';
+import { updateInputField } from '../index.js';
+
 // index set at -1 because at initialization no card is selected
 let index = -1;
 
@@ -6,58 +19,66 @@ let index = -1;
  * @param {*} e
  * @param {array} ids
  */
-function handleKeyPress(e, ids) {
-  //exit if there are no results
-  if (!ids?.length > 0 || ids === 'null') return;
+
+function handleKeyPress(e) {
+  //exit if there are no results or wrong key
+  if (e.key !== 'Enter' && e.key !== 'ArrowUp' && e.key !== 'ArrowDown') return;
+  if (!idsArray?.length > 0 || idsArray === 'null') return;
 
   // show the result div
-  resultsHTML.classList.remove('hidden');
-  wrapper.classList.add('active');
+  removeHiddenFromResultsDiv();
+  addActiveFromWrapper();
 
-  //handles keypresses input
+  //////////////////////////
+  //handles keypresses inputs
+
+  if (e.key === 'Escape') {
+    hideResults();
+  }
+
+  if (e.key === 'Enter' && selectedCard.id !== '') {
+    updateInputField();
+    selectedCard.setSelectedCard(partialResults[index]);
+    return;
+  }
+
   if (e.key === 'ArrowDown') {
     index++;
   } else if (e.key === 'ArrowUp') {
     index--;
   }
+
   switch (true) {
-    case e.key === 'ArrowDown' && index <= ids.length - 1:
-      removeAll(ids);
-      addActive(ids[index]);
+    case e.key === 'ArrowDown' && index <= idsArray.length - 1:
+      removeAll(idsArray);
+      addActive(idsArray[index]);
+      updateSelectedCard();
+
       break;
-    case e.key === 'ArrowDown' && index > ids.length - 1:
-      removeAll(ids);
+    case e.key === 'ArrowDown' && index > idsArray.length - 1:
+      removeAll(idsArray);
       index = 0;
-      addActive(ids[index]);
+      addActive(idsArray[index]);
+      updateSelectedCard();
+
       break;
     case e.key === 'ArrowUp' && index >= 0:
-      removeAll(ids);
-      addActive(ids[index]);
+      removeAll(idsArray);
+      addActive(idsArray[index]);
+      updateSelectedCard();
+
       break;
     case e.key === 'ArrowUp' && index < 0:
-      removeAll(ids);
-      addActive(ids[ids.length - 1]);
-      index = ids.length - 1;
+      removeAll(idsArray);
+      addActive(idsArray[idsArray.length - 1]);
+      index = idsArray.length - 1;
+      updateSelectedCard();
       break;
   }
 }
 
-// helper markup functions. Handle the class that changes color of cards on selection/hover
-
-/** Removes Active class from all Cards
- *
- * @param {arr} ids
- */
-function removeAll(ids) {
-  for (const id of ids) {
-    document.getElementById(id).classList.remove('active');
-  }
-}
-
-/** Add Active class to Card
- *
- * @param {number} id
- */
-const addActive = (id) => {
-  document.getElementById(id).classList.add('active');
+const updateSelectedCard = () => {
+  selectedCard.setSelectedCard(partialResults[index]);
 };
+
+export default handleKeyPress;
