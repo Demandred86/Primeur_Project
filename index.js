@@ -1,9 +1,22 @@
-const autocomplete = document.getElementById('autocomplete');
-const resultsHTML = document.getElementById('result');
-const wrapper = document.getElementById('autocomplete_wrapper');
-const li = document.querySelectorAll('.result-element');
-const isDropDownVisible = wrapper.classList.contains('active');
+/* import debounce from './src/helpers/debouncer.js';
+import { fetchedDataArray } from './src/helpers/fetchData.js'; */
+import {
+  debounce,
+  fetchedDataArray,
+  handleKeyPress,
+  HandleOnClickField,
+  handleOnInput,
+  handleOnSelect,
+} from './src/index.js';
+import { TIMEOUT } from './src/services/config.js';
+//Event Listeners
 
-resultsHTML.addEventListener('click', handleOnSelect);
-autocomplete.addEventListener('click', HandleOnClickField);
-autocomplete.addEventListener('input', debounce(handleOnInput));
+autocomplete.addEventListener(
+  'input',
+  debounce((e) => handleOnInput(e, fetchedDataArray)),
+  TIMEOUT
+);
+
+document.addEventListener('click', HandleOnClickField);
+document.addEventListener('keydown', (e) => handleKeyPress(e));
+document.addEventListener('click', (e) => handleOnSelect(e));

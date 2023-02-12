@@ -1,37 +1,83 @@
-const removeActive = (id) => {
-  document.getElementById(id).classList.remove('active');
-};
-const addActive = (id) => {
-  document.getElementById(id).classList.add('active');
-};
+import {
+  addActive,
+  addActiveFromWrapper,
+  hideResults,
+  removeAll,
+  removeHiddenFromResultsDiv,
+} from '../helpers/removeAddMarkup.js';
+import { idsArray } from './handleOnInput.js';
+import { selectedCard } from '../services/config.js';
+import { partialResults } from '../helpers/showMarkup.js';
+import { updateInputField } from '../index.js';
 
-let index = 0;
-function handleKeyPress(numberOfResults, e) {
-  // guard clauses
-  if (!numberOfResults) return;
+// index set at -1 because at initialization no card is selected
+let index = -1;
 
-  //&& isDropDownHidden
-  if (e.key === 'ArrowDown') {
-    if (index === 0) {
-      addActive(index);
-      index++;
-    } else if (index < numberOfResults) {
-      removeActive(index - 1);
-      addActive(index);
-      index++;
-    }
+/** Manages ArrowUP, ArrowDown keypresses, changing adding or removing classes to the result cards
+ *
+ * @param {*} e
+ * @param {array} ids
+ */
+
+function handleKeyPress(e) {
+  //exit if there are no results or wrong key
+  if (e.key !== 'Enter' && e.key !== 'ArrowUp' && e.key !== 'ArrowDown') return;
+  if (!idsArray?.length > 0 || idsArray === 'null') return;
+
+  // show the result div
+  removeHiddenFromResultsDiv();
+  addActiveFromWrapper();
+
+  //////////////////////////
+  //handles keypresses inputs
+
+  if (e.key === 'Escape') {
+    hideResults();
   }
 
-  if (e.key === 'ArrowUp') {
-    if (index > 0) {
-      index--;
-      removeActive(index);
+  if (e.key === 'Enter' && selectedCard.card.id !== '') {
+    updateInputField();
+    selectedCard.setSelectedCard(partialResults[index]);
+    return;
+  }
 
-      if (index - 1 >= 0) addActive(index - 1);
-    }
-    if (index === 0) {
-      removeActive(index);
-      autocomplete.focus();
-    }
+  if (e.key === 'ArrowDown') {
+    index++;
+  } else if (e.key === 'ArrowUp') {
+    index--;
+  }
+
+  switch (true) {
+    case e.key === 'ArrowDown' && index <= idsArray.length - 1:
+      removeAll(idsArray);
+      addActive(idsArray[index]);
+      updateSelectedCard();
+
+      break;
+    case e.key === 'ArrowDown' && index > idsArray.length - 1:
+      removeAll(idsArray);
+      index = 0;
+      addActive(idsArray[index]);
+      updateSelectedCard();
+
+      break;
+    case e.key === 'ArrowUp' && index >= 0:
+      removeAll(idsArray);
+      addActive(idsArray[index]);
+      updateSelectedCard();
+
+      break;
+    case e.key === 'ArrowUp' && index < 0:
+      removeAll(idsArray);
+      addActive(idsArray[idsArray.length - 1]);
+      index = idsArray.length - 1;
+      updateSelectedCard();
+      break;
   }
 }
+
+const updateSelectedCard = () => {
+  selectedCard.setSelectedCard(partialResults[index]);
+};
+
+export default handleKeyPress;
