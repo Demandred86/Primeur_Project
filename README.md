@@ -6,187 +6,123 @@ The proejct consists of a Search bar that autocomplete results comparing them wi
 
 Try searching for any substring of these values.
 
-{
-  "contacts": [
-    {
-      "id": 1,
-      "name": "Elma Herring",
-      "email": "elmaherring@unq.com",
-      "phone": "+1 (913) 497-2020"
-    },
-    {
-      "id": 2,
-      "name": "Knapp Berry",
-      "email": "knappberry@unq.com",
-      "phone": "+1 (951) 472-2967"
-    },
-    {
-      "id": 3,
-      "name": "Bell Burgess",
-      "email": "bellburgess@unq.com",
-      "phone": "+1 (887) 478-2693"
-    },
-    {
-      "id": 4,
-      "name": "Hobbs Ferrell",
-      "email": "hobbsferrell@unq.com",
-      "phone": "+1 (862) 581-3022"
-    },
-    {
-      "id": 5,
-      "name": "Marylou Medina",
-      "email": "maryloumedina@unq.com",
-      "phone": "+1 (996) 520-2967"
-    },
-    {
-      "id": 6,
-      "name": "Larson Guerra",
-      "email": "larsonguerra@unq.com",
-      "phone": "+1 (972) 566-2684"
-    },
-    {
-      "id": 7,
-      "name": "Shelby Ballard",
-      "email": "shelbyballard@unq.com",
-      "phone": "+1 (824) 467-3579"
-    },
-    {
-      "id": 8,
-      "name": "Lea Faulkner",
-      "email": "leafaulkner@unq.com",
-      "phone": "+1 (899) 528-3402"
-    },
-    {
-      "id": 9,
-      "name": "Cecelia Wolf",
-      "email": "ceceliawolf@unq.com",
-      "phone": "+1 (862) 507-3140"
-    },
-    {
-      "id": 10,
-      "name": "Melva Nixon",
-      "email": "melvanixon@unq.com",
-      "phone": "+1 (901) 444-3081"
-    },
-    {
-      "id": 11,
-      "name": "Bernard Chambers",
-      "email": "bernardchambers@unq.com",
-      "phone": "+1 (831) 539-3366"
-    },
-    {
-      "id": 12,
-      "name": "Wendi Bender",
-      "email": "wendibender@unq.com",
-      "phone": "+1 (868) 414-2720"
-    },
-    {
-      "id": 13,
-      "name": "Wall Stewart",
-      "email": "wallstewart@unq.com",
-      "phone": "+1 (814) 558-3191"
-    },
-    {
-      "id": 14,
-      "name": "Howell Gilbert",
-      "email": "howellgilbert@unq.com",
-      "phone": "+1 (926) 512-3631"
-    },
-    {
-      "id": 15,
-      "name": "Nguyen Maxwell",
-      "email": "nguyenmaxwell@unq.com",
-      "phone": "+1 (838) 469-2152"
-    },
-    {
-      "id": 16,
-      "name": "Norris Hendricks",
-      "email": "norrishendricks@unq.com",
-      "phone": "+1 (818) 563-2900"
-    },
-    {
-      "id": 17,
-      "name": "Salinas Mcleod",
-      "email": "salinasmcleod@unq.com",
-      "phone": "+1 (888) 413-3775"
-    },
-    {
-      "id": 18,
-      "name": "Michelle Barrett",
-      "email": "michellebarrett@unq.com",
-      "phone": "+1 (988) 446-2594"
-    },
-    {
-      "id": 19,
-      "name": "Burke Barlow",
-      "email": "burkebarlow@unq.com",
-      "phone": "+1 (965) 492-2552"
-    },
-    {
-      "id": 20,
-      "name": "Rosie Cummings",
-      "email": "rosiecummings@unq.com",
-      "phone": "+1 (845) 456-2237"
-    },
-    {
-      "id": 21,
-      "name": "Sanford Frye",
-      "email": "sanfordfrye@unq.com",
-      "phone": "+1 (936) 581-3494"
-    },
-    {
-      "id": 22,
-      "name": "Janna Peck",
-      "email": "jannapeck@unq.com",
-      "phone": "+1 (824) 512-2437"
-    },
-    {
-      "id": 23,
-      "name": "Lorraine Sykes",
-      "email": "lorrainesykes@unq.com",
-      "phone": "+1 (959) 422-3635"
-    },
-    {
-      "id": 24,
-      "name": "Vicki Fulton",
-      "email": "vickifulton@unq.com",
-      "phone": "+1 (916) 455-2402"
-    },
-    {
-      "id": 25,
-      "name": "Massey Moody",
-      "email": "masseymoody@unq.com",
-      "phone": "+1 (840) 453-3811"
-    },
-    {
-      "id": 26,
-      "name": "Grant Berg",
-      "email": "grantberg@unq.com",
-      "phone": "+1 (837) 554-3706"
-    },
-    {
-      "id": 27,
-      "name": "Hawkins Winters",
-      "email": "hawkinswinters@unq.com",
-      "phone": "+1 (945) 469-2432"
-    },
-    {
-      "id": 28,
-      "name": "Frazier Davidson",
-      "email": "frazierdavidson@unq.com",
-      "phone": "+1 (854) 558-2637"
-    },
-    {
-      "id": 29,
-      "name": "Francine Cervantes",
-      "email": "francinecervantes@unq.com",
-      "phone": "+1 (923) 520-2916"
-    },
-    {
-      "id": 30,
-      "name": "Francis Perez",
-      "email": "francisperez@unq.com",
-      "phone": "+1 (885) 461-3054"
-    }
-  ]
-}
+
+      Elma Herring
+      elmaherring@unq.com
+      +1 (913) 497-2020
+    
+      Knapp Berry
+      knappberry@unq.com
+      +1 (951) 472-2967
+
+      Bell Burgess
+      bellburgess@unq.com
+      +1 (887) 478-2693
+
+      Hobbs Ferrell
+      hobbsferrell@unq.com
+      +1 (862) 581-3022
+  
+      Marylou Medina
+      maryloumedina@unq.com
+      +1 (996) 520-2967
+  
+      Larson Guerra
+      larsonguerra@unq.com
+      +1 (972) 566-2684
+  
+      Shelby Ballard
+      shelbyballard@unq.com
+      +1 (824) 467-3579
+    
+      Lea Faulkner
+      leafaulkner@unq.com
+      +1 (899) 528-3402
+    
+      Cecelia Wolf
+      ceceliawolf@unq.com
+      +1 (862) 507-3140
+    
+      Melva Nixon
+      melvanixon@unq.com
+      +1 (901) 444-3081
+    
+      Bernard Chambers
+      bernardchambers@unq.com
+      +1 (831) 539-3366
+   
+      Wendi Bender
+      wendibender@unq.com
+      +1 (868) 414-2720
+ 
+      Wall Stewart
+      wallstewart@unq.com
+      +1 (814) 558-3191
+ 
+      Howell Gilbert
+      howellgilbert@unq.com
+      +1 (926) 512-3631
+  
+      Nguyen Maxwell
+      nguyenmaxwell@unq.com
+      +1 (838) 469-2152
+   
+      Norris Hendricks
+      norrishendricks@unq.com
+      +1 (818) 563-2900
+   
+      Salinas Mcleod
+      salinasmcleod@unq.com
+      +1 (888) 413-3775
+ 
+      Michelle Barrett
+      michellebarrett@unq.com
+      +1 (988) 446-2594
+    
+      Burke Barlow
+      burkebarlow@unq.com
+      +1 (965) 492-2552
+  
+      Rosie Cummings
+      rosiecummings@unq.com
+      +1 (845) 456-2237
+ 
+      Sanford Frye
+      sanfordfrye@unq.com
+      +1 (936) 581-3494
+    
+      Janna Peck
+      jannapeck@unq.com
+      +1 (824) 512-2437
+   
+      Lorraine Sykes
+      lorrainesykes@unq.com
+      +1 (959) 422-3635
+ 
+      Vicki Fulton
+      vickifulton@unq.com
+      +1 (916) 455-2402
+   
+      Massey Moody
+      masseymoody@unq.com
+      +1 (840) 453-3811
+  
+      Grant Berg
+      grantberg@unq.com
+      +1 (837) 554-3706
+ 
+      Hawkins Winters
+      hawkinswinters@unq.com
+      +1 (945) 469-2432
+
+      Frazier Davidson
+      frazierdavidson@unq.com
+      +1 (854) 558-2637
+   
+      Francine Cervantes
+      francinecervantes@unq.com
+      +1 (923) 520-2916
+   
+      Francis Perez
+      francisperez@unq.com
+      +1 (885) 461-3054
