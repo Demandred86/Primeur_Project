@@ -1,5 +1,5 @@
 import { MAX_NUMBER_OF_DISPLAYED_RESULTS } from '../services/config.js';
-import { resultsHTML, wrapper } from '../services/selectors.js';
+import { resultsHTML } from '../services/selectors.js';
 import { addActiveFromWrapper } from './removeAddMarkup.js';
 
 /**
@@ -18,11 +18,9 @@ function renderResults(array) {
   const idsArray = [];
 
   // Trims the results to show only the max number set in the config file
-  if (array.length > MAX_NUMBER_OF_DISPLAYED_RESULTS) {
-    partialResults = array.slice(0, MAX_NUMBER_OF_DISPLAYED_RESULTS);
-  } else {
-    partialResults = array; // array of objects
-  }
+  array.length > MAX_NUMBER_OF_DISPLAYED_RESULTS
+    ? (partialResults = array.slice(0, MAX_NUMBER_OF_DISPLAYED_RESULTS))
+    : (partialResults = array);
 
   // Markup "Showing number of results out of"
   showNumberOfResults(array);

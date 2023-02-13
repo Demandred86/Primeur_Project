@@ -23,7 +23,9 @@ const findMatchingResults = (input, fetcheDataArray) => {
 
   for (const element of fetcheDataArray) {
     // If the element partially matches the input then push it into the result array
-    if (Object.values(element).toString().toLowerCase().includes(input)) matchingElementsArray.push(element);
+    if (Object.values(element).toString().toLowerCase().includes(input)) {
+      matchingElementsArray.push(element);
+    }
   }
   //updates cache
   cache = { ...cache, [input]: matchingElementsArray };

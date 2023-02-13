@@ -26,7 +26,7 @@ const addActive = (id) => {
  *
  */
 const hideResults = () => {
-  addHiddenToResultsDiv;
+  addHiddenToResultsDiv();
   removeActiveFromWrapper();
   autocomplete.focus();
 };

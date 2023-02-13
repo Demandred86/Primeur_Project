@@ -1,5 +1,3 @@
-/* import debounce from './src/helpers/debouncer.js';
-import { fetchedDataArray } from './src/helpers/fetchData.js'; */
 import {
   debounce,
   fetchedDataArray,
@@ -9,8 +7,8 @@ import {
   handleOnSelect,
 } from './src/index.js';
 import { TIMEOUT } from './src/services/config.js';
+import { autocomplete } from './src/services/selectors.js';
 //Event Listeners
-
 autocomplete.addEventListener(
   'input',
   debounce((e) => handleOnInput(e, fetchedDataArray)),
